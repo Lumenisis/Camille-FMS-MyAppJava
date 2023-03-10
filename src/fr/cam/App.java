@@ -4,8 +4,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-import fr.cam.bdd.ProductDao;
-import fr.cam.entities.Product;
+import fr.cam.bdd.ArticleDao;
+import fr.cam.bdd.CategoryDao;
+import fr.cam.entities.Article;
+import fr.cam.entities.Category;
 import fr.cam.mvc.Controller;
 import fr.cam.mvc.Model;
 import fr.cam.mvc.View;
@@ -33,8 +35,13 @@ public class App {
 		new Controller(model, view);			
 	}
 
-	private static void testProductDao() {
-		for(Product p : new ProductDao().readAll())
-		System.out.println(p);		
+	private static void testArticleDao() {
+		for(Article a : new ArticleDao().readAll())
+		System.out.println(a);		
+	}
+	
+	private static void testCategoryDao() {
+		for(Category c : new CategoryDao().readAll())
+		System.out.println(c);		
 	}
 }
