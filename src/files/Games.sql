@@ -26,6 +26,16 @@ CREATE TABLE T_Categories (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------------------------------
+-- - Construction de la table des développeurs
+-- -----------------------------------------------------------------------------
+CREATE TABLE T_Developers (
+	IdDeveloper 			INT(4) 		 PRIMARY KEY AUTO_INCREMENT,
+	Description 			VARCHAR(100) NOT NULL,
+	DevName 				VARCHAR(30)  NOT NULL,
+	Location				VARCHAR(30)  NOT NULL
+) ENGINE = InnoDB;
+
+-- -----------------------------------------------------------------------------
 -- - Insertion des articles dans la table
 -- -----------------------------------------------------------------------------
 INSERT INTO T_Articles (Description, ArtName, UnitaryPrice) VALUES ();
@@ -44,7 +54,17 @@ INSERT INTO T_Categories (Description, CatName, Ranking) VALUES ();
 INSERT INTO T_Categories (Description, CatName, Ranking) VALUES ();
 
 -- -----------------------------------------------------------------------------
+-- - Insertion des développeurs dans la table
+-- -----------------------------------------------------------------------------
+INSERT INTO T_Developers (Description, DevName, Location) VALUES ();
+INSERT INTO T_Developers (Description, DevName, Location) VALUES ();
+INSERT INTO T_Developers (Description, DevName, Location) VALUES ();
+INSERT INTO T_Developers (Description, DevName, Location) VALUES ();
+INSERT INTO T_Developers (Description, DevName, Location) VALUES ();
+
+-- -----------------------------------------------------------------------------
 -- - Affichage des tables
 -- -----------------------------------------------------------------------------
 SELECT * FROM T_Articles;
 SELECT * FROM T_Categories;
+SELECT * FROM T_Developers;
