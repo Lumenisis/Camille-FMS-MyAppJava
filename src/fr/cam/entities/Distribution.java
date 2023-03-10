@@ -1,19 +1,19 @@
 package fr.cam.entities;
 
-public class Category {
+public class Distribution {
 	private int id;
 	private String description;
-	private String catname;
-
-	public Category(int id, String description, String catname) {
+	private String distname;
+	
+	public Distribution(int id, String description, String distname) {
 		this.id = id;
 		this.description = description;
-		this.catname = catname;
+		this.distname = distname;
 	}
-
-	public Category(String description, String catname) {
+	
+	public Distribution(String description, String distname) {
 		this.description = description;
-		this.catname = catname;
+		this.distname = distname;
 	}
 
 	/**
@@ -45,16 +45,16 @@ public class Category {
 	}
 
 	/**
-	 * @return the catname
+	 * @return the distname
 	 */
-	public String getCatname() {
-		return catname;
+	public String getDistname() {
+		return distname;
 	}
 
 	/**
-	 * @param catname the catname to set
+	 * @param distname the distname to set
 	 */
-	public void setCatname(String catname) {
-		this.catname = catname;
+	public void setDistname(String distname) {
+		this.distname = distname;
 	}
 }

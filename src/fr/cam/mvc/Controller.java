@@ -1,7 +1,6 @@
 package fr.cam.mvc;
 
-import fr.cam.mvc.Model;
-import fr.cam.mvc.View;
+import fr.cam.entities.Distribution;
 
 public class Controller {
 	private Model model;
@@ -12,8 +11,27 @@ public class Controller {
 		this.view = view;
 		initController();
 	}
-
-	private void initController() {
-		
+	
+	public void initController(){
+		view.initTable(model);
+		view.getOk().addActionListener(e -> actionChangeHMI());
+		view.getAdd().addActionListener(e -> actionAddDistribution());
+	}
+	
+	private void actionAddDistribution() {
+		Distribution distribution = view.getDistribution();
+		model.addDistribution(distribution);
+		actionChangeHMI();
+		view.setProduct();
+	}
+	
+	private void actionChangeHMI() {
+		try {
+			model.loadData();
+			model.fireTableChanged(null);
+		}
+		catch(Exception e) {
+			View.warning(" Oups il y a eu un pb : " + e.getMessage());
+		}
 	}
 }

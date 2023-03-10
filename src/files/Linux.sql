@@ -7,10 +7,10 @@ USE Linux;
 -- -----------------------------------------------------------------------------
 -- - Construction de la tables des systèmes
 -- -----------------------------------------------------------------------------
-CREATE TABLE T_Systems (
-	IdSystem				int(4)		PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE T_Distributions (
+	IdDistribution			int(4)		PRIMARY KEY AUTO_INCREMENT,
 	Description				varchar(100)NOT NULL,
-	SysName					varchar(30)	NOT NULL
+	DistName				varchar(30)	NOT NULL
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------------------------------
@@ -52,9 +52,9 @@ CREATE TABLE T_Users (
 -- -----------------------------------------------------------------------------
 -- - Insertion des systèmes dans la table
 -- -----------------------------------------------------------------------------
-INSERT INTO T_Systems (Description, SysName) VALUES ();
-INSERT INTO T_Systems (Description, SysName) VALUES ();
-INSERT INTO T_Systems (Description, SysName) VALUES ();
+INSERT INTO T_Distributions (Description, DistName) VALUES ();
+INSERT INTO T_Distributions (Description, DistName) VALUES ();
+INSERT INTO T_Distributions (Description, DistName) VALUES ();
 
 -- -----------------------------------------------------------------------------
 -- - Insertion des catégories dans la table
@@ -87,7 +87,7 @@ INSERT INTO T_Users (Description, UserName) VALUES ();
 -- -----------------------------------------------------------------------------
 -- - Affichage des tables
 -- -----------------------------------------------------------------------------
-SELECT * FROM T_Systems;
+SELECT * FROM T_Distributions;
 SELECT * FROM T_Categories;
 SELECT * FROM T_Developers;
 SELECT * FROM T_Specifications;

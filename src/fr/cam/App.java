@@ -4,28 +4,26 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-import fr.cam.dao.SystemDao;
+import fr.cam.dao.DistributionDao;
 import fr.cam.dao.CategoryDao;
-import fr.cam.dao.DeveloperDao;
-import fr.cam.entities.System;
+import fr.cam.entities.Distribution;
 import fr.cam.entities.Category;
-import fr.cam.entities.Developer;
 import fr.cam.mvc.Controller;
 import fr.cam.mvc.Model;
 import fr.cam.mvc.View;
 
 /**
- * Application de gestion des stocks d'une boutique de gaming
- * Utilisation du langage Java
- * Utilisation des requêtes SQL
- * Utilisation de Swing
+ * application that provides information about linux systems
+ * uses the Java language
+ * uses the SQL queries
+ * uses the Swing API
  * 
  * @author Camille - 2023
  *
  */
 
 public class App {
-	
+
 	public static void main(String[] args) {	
 		try {
 			UIManager.setLookAndFeel(new NimbusLookAndFeel());
@@ -37,18 +35,13 @@ public class App {
 		new Controller(model, view);			
 	}
 
-	private static void testArticleDao() {
-		for(System a : new SystemDao().readAll())
-		System.out.println(a);		
+	private static void testDistributionDao() {
+		for(Distribution a : new DistributionDao().readAll())
+			System.out.println(a);		
 	}
-	
+
 	private static void testCategoryDao() {
 		for(Category c : new CategoryDao().readAll())
-		System.out.println(c);		
-	}
-	
-	private static void testDeveloperDao() {
-		for(Developer d : new DeveloperDao().readAll())
-		System.out.println(d);		
+			System.out.println(c);		
 	}
 }

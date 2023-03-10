@@ -5,22 +5,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import fr.cam.entities.System;
+import fr.cam.entities.Distribution;
 
-public class SystemDao implements Dao<System> {
+public class DistributionDao implements Dao<Distribution> {
 
 	@Override
-	public ArrayList<System> readAll() {
-		ArrayList<System> systems = new ArrayList<System>();
-		String strSql = "SELECT * FROM T_Articles";		
+	public ArrayList<Distribution> readAll() {
+		ArrayList<Distribution> distributions = new ArrayList<Distribution>();
+		String strSql = "SELECT * FROM T_Distributions";		
 		try(Statement statement = connection.createStatement()){
 			try(ResultSet resultSet = statement.executeQuery(strSql)){ 			
 				while(resultSet.next()) {
 					int rsId = resultSet.getInt(1);	
 					String rsDescription = resultSet.getString(2);
-					String rsBrand = resultSet.getString(3);
-					double rsPrice = resultSet.getDouble(4);		
-					systems.add((new System(rsId,rsDescription,rsBrand,rsPrice)));						
+					String rsDistribution = resultSet.getString(3);		
+					distributions.add((new Distribution(rsId,rsDescription,rsDistribution)));						
 				}	
 			}
 		} catch (SQLException e) {
@@ -29,29 +28,29 @@ public class SystemDao implements Dao<System> {
 		catch (Exception e) {
 			logger.severe("pb : " + e.getMessage());
 		}
-		return systems;
+		return distributions;
 	}
 
 	@Override
-	public boolean create(System obj) {
+	public boolean create(Distribution obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public System read(int id) {
+	public Distribution read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean update(System obj) {
+	public boolean update(Distribution obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(System obj) {
+	public boolean delete(Distribution obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}

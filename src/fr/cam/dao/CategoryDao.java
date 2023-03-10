@@ -5,23 +5,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import fr.cam.entities.System;
-import fr.fms.entities.Category;
+import fr.cam.entities.Category;
 
 public class CategoryDao implements Dao<Category>{
-
+	
 	@Override
-	public ArrayList<System> readAll() {
-		ArrayList<System> systems = new ArrayList<System>();
-		String strSql = "SELECT * FROM T_Articles";		
+	public ArrayList<Category> readAll() {
+		ArrayList<Category> categories = new ArrayList<Category>();
+		String strSql = "SELECT * FROM T_Categories";		
 		try(Statement statement = connection.createStatement()){
 			try(ResultSet resultSet = statement.executeQuery(strSql)){ 			
 				while(resultSet.next()) {
 					int rsId = resultSet.getInt(1);	
 					String rsDescription = resultSet.getString(2);
-					String rsBrand = resultSet.getString(3);
-					double rsPrice = resultSet.getDouble(4);		
-					systems.add((new System(rsId,rsDescription,rsBrand,rsPrice)));						
+					String rsCategory = resultSet.getString(3);		
+					categories.add((new Category(rsId,rsDescription,rsCategory)));						
 				}	
 			}
 		} catch (SQLException e) {
@@ -30,29 +28,29 @@ public class CategoryDao implements Dao<Category>{
 		catch (Exception e) {
 			logger.severe("pb : " + e.getMessage());
 		}
-		return systems;
+		return categories;
 	}
 
 	@Override
-	public boolean create(System obj) {
+	public boolean create(Category obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public System read(int id) {
+	public Category read(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean update(System obj) {
+	public boolean update(Category obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean delete(System obj) {
+	public boolean delete(Category obj) {
 		// TODO Auto-generated method stub
 		return false;
 	}
