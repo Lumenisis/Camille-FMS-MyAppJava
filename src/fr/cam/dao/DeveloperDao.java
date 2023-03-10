@@ -1,4 +1,4 @@
-package fr.cam.bdd;
+package fr.cam.dao;
 
 public class DeveloperDao {
 

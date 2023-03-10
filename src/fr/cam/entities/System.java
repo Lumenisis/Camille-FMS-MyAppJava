@@ -1,6 +1,6 @@
 package fr.cam.entities;
 
-public class Article {
+public class System {
 	private int id;
 	private String description;
 	private String brand;
@@ -10,7 +10,7 @@ public class Article {
 	
 	public static final int MAX_STRING_LENGTH = 20;
 	
-	public Article(int id, String description, String brand, double price, int category) {
+	public System(int id, String description, String brand, double price, int category) {
 		this.id = id;
 		this.description = description;
 		this.brand = brand;
@@ -18,14 +18,14 @@ public class Article {
 		this.category = category;
 	}
 	
-	public Article(int id, String description, String brand, double price) {
+	public System(int id, String description, String brand, double price) {
 		this.id = id;
 		this.description = description;
 		this.brand = brand;
 		this.price = price;
 	}
 	
-	public Article(String description, String brand, double price) {
+	public System(String description, String brand, double price) {
 		this.id = 0;
 		this.description = description;
 		this.brand = brand;

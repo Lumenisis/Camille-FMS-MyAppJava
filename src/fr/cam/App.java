@@ -4,10 +4,10 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-import fr.cam.bdd.ArticleDao;
-import fr.cam.bdd.CategoryDao;
-import fr.cam.bdd.DeveloperDao;
-import fr.cam.entities.Article;
+import fr.cam.dao.SystemDao;
+import fr.cam.dao.CategoryDao;
+import fr.cam.dao.DeveloperDao;
+import fr.cam.entities.System;
 import fr.cam.entities.Category;
 import fr.cam.entities.Developer;
 import fr.cam.mvc.Controller;
@@ -38,7 +38,7 @@ public class App {
 	}
 
 	private static void testArticleDao() {
-		for(Article a : new ArticleDao().readAll())
+		for(System a : new SystemDao().readAll())
 		System.out.println(a);		
 	}
 	

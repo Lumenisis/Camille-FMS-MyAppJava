@@ -1,4 +1,4 @@
-package fr.cam.bdd;
+package fr.cam.dao;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import fr.cam.bdd.BddConnection;
+import fr.cam.dao.BddConnection;
 
 /**
  * @author Camille - 2023
